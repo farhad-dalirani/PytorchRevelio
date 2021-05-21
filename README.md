@@ -12,7 +12,7 @@ Download These Files and put them in your code directory:
   * utilities_PytorchRevelio.py
   * imagenet_labels Folder
 
-In the following we introduce provided methods and show usecase of them with different examples.  
+In the following, we introduce provided methods and show their use cases with different examples.  
 
 ## What should we pay attention to while using these methods?
 Visualizing learned feature maps and illustrating saliency maps are highly sensitive to hyper-parameters. Therefore, make sure to choose a good set of hyper-parameters to obtain good results. 
