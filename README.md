@@ -33,12 +33,12 @@ deep_dream(...) | [Inceptionism: Going Deeper into Neural Networks](https://ai.g
 grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
 
 * For visualization of features performance of different methods is as follow:
-  l. activation_maximization_with_bilateral_blurring
-  l. activation_maximization_with_gaussian_blurring
-  l. activation_maximization
+  1. activation_maximization_with_bilateral_blurring
+  1. activation_maximization_with_gaussian_blurring
+  1. activation_maximization
 * For saliency map performance of different methods is as follow:
-  l. grad_cam
-  l. saliency_map_guided
-  l. saliency_map
+  1. grad_cam
+  1. saliency_map_guided
+  1. saliency_map
 
 
