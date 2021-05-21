@@ -22,6 +22,6 @@ Visualizing learned feature maps and illustrating saliency maps are highly sensi
 Methods | Source(Paper, Webpage, etc)
 --------|--------
 activation_maximization | [Visualizing higher-layer features of a deep network](https://www.researchgate.net/publication/265022827_Visualizing_Higher-Layer_Features_of_a_Deep_Network)
-activation_maximization_with_gaussian_blurring | [Visualizing higher-layer features of a deep network](https://www.researchgate.net/publication/265022827_Visualizing_Higher-Layer_Features_of_a_Deep_Network) [Visualizing GoogLeNet Classes
+activation_maximization_with_gaussian_blurring | [Visualizing GoogLeNet Classes
 ](https://www.auduno.com/2015/07/29/visualizing-googlenet-classes/)
 
