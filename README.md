@@ -1,5 +1,5 @@
 ![PytorchRevelio](/readme-images/PytorchRevelio.jpg)
-Format: ![PytorchRevelio](url)
+
 
 # Introduction of PytorchRevelio 
 
