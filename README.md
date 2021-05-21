@@ -33,11 +33,11 @@ deep_dream(...) | [Inceptionism: Going Deeper into Neural Networks](https://ai.g
 grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
 
 ## Which method does perform better? 
-* The higher method in the list performs better for visualization:
+* The higher methods in the list perform better for feature visualization:
   1. activation_maximization_with_bilateral_blurring
   1. activation_maximization_with_gaussian_blurring
   1. activation_maximization
-* The higher method in list performs better for saliency map:
+* The higher methods in the list perform better for saliency map:
   1. grad_cam
   1. saliency_map_guided
   1. saliency_map
