@@ -380,3 +380,153 @@ Some of the outputs:
 
 
 
+* Saliency map of ResNet-18 with saliency_map:
+
+```python
+import matplotlib.pyplot as plt
+import torch
+import torchvision
+from torchvision import transforms
+from PIL import Image
+from PytorchRevelio import PytorchRevelio
+
+if __name__ == '__main__':
+
+    # load pretrained resnet18
+    resnet18_net = torchvision.models.resnet18(pretrained=True)
+
+    # choose GPU if it is available
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    print('Device: {}'.format(device))
+
+    # put network on device
+    resnet18_net.to(device)
+
+    # print name of modules
+    for key, value in resnet18_net.named_modules():
+        print('+' * 10)
+        print(key)
+        print('-' * 10)
+        print(value)
+
+    # network transformer for input image
+    img_transformer = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+
+    # for different convolutional filter and neuron in fully connected layer
+    # show representation
+    first_layer_name = 'conv1'
+    last_layer_name = 'fc'
+
+    for input_image_name, class_number in [("test_images/kit_fox_278_imagenet.jpg", 278),
+                                           ("test_images/bald_eagle_22_imagenet.jpg", 22),
+                                           ("test_images/peacock_imagenet_84.jpg", 84),
+                                           ("test_images/tiger_imagenet_292.jpg", 292),
+                                           ("test_images/toucan_imagenet_96.jpg", 96),
+                                           ("test_images/cello_imagenet_486.jpg", 486)]:
+
+        # read input image
+        input_image = Image.open(input_image_name).convert('RGB')
+        network_input_shape = (input_image.size[0], input_image.size[1], 3)
+
+        gradients = PytorchRevelio.saliency_map(network=resnet18_net,
+                                                input_image=input_image,
+                                                class_number=class_number,
+                                                img_transformer=img_transformer,
+                                                first_layer_name=first_layer_name,
+                                                last_layer_name=last_layer_name,
+                                                device=device)
+
+        gradients = PytorchRevelio.tensor_outputs_to_image(gradients)
+
+        plt.figure()
+        plt.subplot(1, 2, 1)
+        plt.imshow(gradients)
+        plt.subplot(1, 2, 2)
+        plt.imshow(input_image.resize(size=(224, 224)))
+
+    plt.show()
+```
+
+Some of the outputs:
+![PytorchRevelio](/readme-images/Figure_2_sm.jpg)
+
+
+
+
+
+* Saliency map of ResNet-50 with saliency_map:
+
+```python
+import matplotlib.pyplot as plt
+import torch
+import torchvision
+from torchvision import transforms
+from PIL import Image
+from PytorchRevelio import PytorchRevelio
+
+if __name__ == '__main__':
+
+    # load pretrained resnet50
+    resnet18_net = torchvision.models.resnet50(pretrained=True)
+
+    # choose GPU if it is available
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = 'cpu'
+    print('Device: {}'.format(device))
+
+    # put network on device
+    resnet18_net.to(device)
+
+    # print name of modules
+    for key, value in resnet18_net.named_modules():
+        print('+' * 10)
+        print(key)
+        print('-' * 10)
+        print(value)
+
+    # network transformer for input image
+    img_transformer = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+    network_input_shape = (224, 224, 3)
+
+    # for different convolutional filter and neuron in fully connected layer
+    # show representation
+    first_layer_name = 'conv1'
+    last_layer_name = 'fc'
+
+    for input_image_name, class_number in [("test_images/kit_fox_278_imagenet.jpg", 278),
+                                           ("test_images/bald_eagle_22_imagenet.jpg", 22),
+                                           ("test_images/peacock_imagenet_84.jpg", 84),
+                                           ("test_images/tiger_imagenet_292.jpg", 292),
+                                           ("test_images/toucan_imagenet_96.jpg", 96),
+                                           ("test_images/cello_imagenet_486.jpg", 486)]:
+
+        # read input image
+        input_image = Image.open(input_image_name).convert('RGB')
+
+        gradients = PytorchRevelio.saliency_map_guided(network=resnet18_net,
+                                                       input_image=input_image,
+                                                       class_number=class_number,
+                                                       img_transformer=img_transformer,
+                                                       first_layer_name=first_layer_name,
+                                                       device=device)
+
+        gradients = PytorchRevelio.tensor_outputs_to_image(gradients)
+        plt.figure()
+        plt.subplot(1, 2, 1)
+        plt.imshow(gradients)
+        plt.subplot(1, 2, 2)
+        plt.imshow(input_image.resize(size=(224, 224)))
+
+    plt.show()
+```
+
+Some of the outputs:
+![PytorchRevelio](/readme-images/.jpg)
