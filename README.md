@@ -258,7 +258,7 @@ Some of the outputs:
 
 
 
-* Visualizing features of ResNet-18 with activation_maximization_with_bilateral_blurring:
+* Visualizing features of VGG-11 with activation_maximization_with_bilateral_blurring:
 
 ```python
 import matplotlib.pyplot as plt
