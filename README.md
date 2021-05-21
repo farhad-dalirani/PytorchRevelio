@@ -14,5 +14,5 @@ Download These Files and put them in your code directory:
 
 In the following we introduce provided methods and show usecase of them with different examples.  
 
-## What sould we pay attention to during using these methods?
+## What should we pay attention to while using these methods?
 Visualizing learned feature maps and illustrating saliency maps are highly sensitive to hyper-parameters. Therefore, make sure to choose a good set of hyper-parameters to obtain good results. 
