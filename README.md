@@ -140,8 +140,8 @@ if __name__ == '__main__':
 ```
 
 Some of the outputs:
-![PytorchRevelio](/readme-images/Figure_1_alexnet_AM.png)
-![PytorchRevelio](/readme-images/Figure_3_alexnet_AM.png)
+![PytorchRevelio](/readme-images/Figure_1_alexnet_AM.jpg)
+![PytorchRevelio](/readme-images/Figure_3_alexnet_AM.jpg)
 
 
 
