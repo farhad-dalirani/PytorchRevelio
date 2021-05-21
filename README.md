@@ -458,7 +458,7 @@ Some of the outputs:
 
 
 
-* Saliency map of ResNet-50 with saliency_map:
+* Saliency map of ResNet-50 with saliency_map_guided:
 
 ```python
 import matplotlib.pyplot as plt
@@ -529,4 +529,7 @@ if __name__ == '__main__':
 ```
 
 Some of the outputs:
-![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/Figure_2_sm_guided.jpg)
+![PytorchRevelio](/readme-images/Figure_3_sm_guided.jpg)
+![PytorchRevelio](/readme-images/Figure_5_sm_guided.jpg)
+
