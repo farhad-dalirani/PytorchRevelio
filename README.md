@@ -249,9 +249,137 @@ if __name__ == '__main__':
 ```
 
 Some of the outputs:
-![PytorchRevelio](/readme-images/Figure_1_vgg11_AM_gaussian.jpg)
-![PytorchRevelio](/readme-images/Figure_3_vgg11_AM_gaussian.jpg)
+![PytorchRevelio](/readme-images/Figure_2_vgg11_am_gaussian.jpg)
+![PytorchRevelio](/readme-images/Figure_4_vgg11_am_gaussian.jpg)
+![PytorchRevelio](/readme-images/Figure_6_vgg11_am_gaussian.jpg)
+![PytorchRevelio](/readme-images/Figure_7_vgg11_am_gaussian.jpg)
+![PytorchRevelio](/readme-images/Figure_9_vgg11_am_gaussian.jpg)
+![PytorchRevelio](/readme-images/Figure_11_vgg11_am_gaussian.jpg)
 
+
+
+* Visualizing features of ResNet-18 with activation_maximization_with_bilateral_blurring:
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import torch.nn as nn
+import torch
+import torchvision
+from torchvision import transforms
+from PytorchRevelio import PytorchRevelio
+from utilities_PytorchRevelio import imagenet_labels
+from PIL import Image
+
+
+if __name__ == '__main__':
+
+    # load pretrained VGG11
+    vgg11_net = torchvision.models.vgg11(pretrained=True)
+
+    # choose GPU if it is available
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    print('Device: {}'.format(device))
+
+    # put network on device
+    vgg11_net.to(device)
+
+    # print name of modules
+    for key, value in vgg11_net.named_modules():
+        print('+' * 10)
+        print(key)
+        print('-' * 10)
+        print(value)
+
+    # network transformer for input image
+    img_size = (224, 224, 3)
+    img_transformer = transforms.Compose([
+        transforms.Resize(256),
+        transforms.CenterCrop(224),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+
+    # for different convolutional filter and neuron in fully connected layer
+    # show representation
+    first_layer_name = 'features.0'
+    last_layer_name = 'classifier.6'
+    for layer_name in vgg11_net.named_modules():
+
+        layer_name = layer_name[0]
+
+        # select convolutional and fully connected layers for visualization
+        layer = PytorchRevelio.return_module_by_name(network=vgg11_net, module_name=layer_name)
+        if isinstance(layer, nn.Conv2d):
+            filter_neuron_num = layer.out_channels
+            layer_type = 'Conv2d'
+            num_iter = 300
+            lr = 0.09
+            start_sigma_color = 25
+            end_sigma_color = 110
+            start_sigma_space = 25
+            end_sigma_space = 110
+            kernel_size = 3
+        elif isinstance(layer, nn.Linear):
+            filter_neuron_num = layer.out_features
+            layer_type = 'Linear'
+            num_iter = 300
+            lr = 0.09
+            start_sigma_color = 25
+            end_sigma_color = 110
+            start_sigma_space = 25
+            end_sigma_space = 110
+            kernel_size = 3
+        else:
+            continue
+
+        # from each layer select 8 filter our neurons
+        filters_neuron_indexs = np.random.choice([i for i in range(filter_neuron_num)], size=8)
+
+        # for each selected filter or neuron, calculate representation
+        plt.figure()
+        for i, filter_neuron_index in enumerate(filters_neuron_indexs):
+            img = PytorchRevelio.activation_maximization_with_bilateral_blurring(
+                network=vgg11_net,
+                img_transformer=img_transformer,
+                in_img_size=img_size,
+                first_layer_name=first_layer_name,
+                layer_name=layer_name,
+                filter_or_neuron_index=filter_neuron_index,
+                num_iter=num_iter,
+                start_sigma_color=start_sigma_color,
+                end_sigma_color=end_sigma_color,
+                start_sigma_space=start_sigma_space,
+                end_sigma_space=end_sigma_space,
+                kernel_size=kernel_size,
+                lr=lr,
+                device=device)
+
+            # to cpu and normalize for illustration purpose
+            img = PytorchRevelio.tensor_outputs_to_image(img)
+
+            # Illustrate
+            ax = plt.subplot(2, 4, i+1)
+            plt.imshow(img)
+            if layer_name != last_layer_name:
+                ax.set_title("{}".format(filter_neuron_index))
+            else:
+                ax.set_title("{}, {}".format(filter_neuron_index, imagenet_labels(class_number=filter_neuron_index)))
+
+            plt.suptitle('Layer Name: {}, Type: {}'.format(layer_name, layer_type))
+            ax.axis('off')
+            print('Processing of layer {}, filter/neuron {} is done.'.format(layer_name, filter_neuron_index))
+
+    plt.show()
+```
+
+Some of the outputs:
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
 
 
 
