@@ -4,3 +4,10 @@ PytorchRevelio is a collection of classes and functions that allow you to invest
 
 ## Where can we use it?
 With PytorchRevelio you can investigate MLP and Convolutional neural networks that are written in Pytorch. There is no matter that you have writtern the network or it is a Pytorch build-in neural network such as VGG-19. 
+
+
+# How to use it?
+Download These Files and put them in your code directory:
+  * PytorchRevelio.py
+  * utilities_PytorchRevelio.py
+  * imagenet_labels Folder
