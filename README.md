@@ -632,6 +632,10 @@ if __name__ == '__main__':
 ```
 
 Some of the outputs:
-![PytorchRevelio](/readme-images/.jpg)
-![PytorchRevelio](/readme-images/.jpg)
-![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/Figure_3_sm_ggc.jpg)
+![PytorchRevelio](/readme-images/Figure_4_sm_ggc.jpg)
+![PytorchRevelio](/readme-images/Figure_5_sm_ggc.jpg)
+![PytorchRevelio](/readme-images/Figure_6_sm_ggc.jpg)
+![PytorchRevelio](/readme-images/Figure_8_sm_ggc.jpg)
+![PytorchRevelio](/readme-images/Figure_9_sm_ggc.jpg)
+![PytorchRevelio](/readme-images/Figure_10_sm_ggc.jpg)
