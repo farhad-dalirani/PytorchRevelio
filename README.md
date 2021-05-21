@@ -47,7 +47,7 @@ grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-b
 
 * Visualizing features of Alexnet with activation_maximization:
 
-'''python
+```python
 import matplotlib.pyplot as plt
 import numpy as np
 import torch.nn as nn
@@ -137,7 +137,7 @@ if __name__ == '__main__':
             print('Processing of layer {}, filter/neuron {} is done.'.format(layer_name, filter_neuron_index))
 
     plt.show()
-'''
+```
 
 Some of the outputs
 
