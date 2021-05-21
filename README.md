@@ -32,6 +32,7 @@ saliency_map_guided(...) | [Striving for Simplicity: The All Convolutional Net](
 deep_dream(...) | [Inceptionism: Going Deeper into Neural Networks](https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html)
 grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
 
+## Which method does perform better? 
 * For visualization of features performance of different methods is as follow:
   1. activation_maximization_with_bilateral_blurring
   1. activation_maximization_with_gaussian_blurring
