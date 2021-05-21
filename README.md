@@ -533,3 +533,105 @@ Some of the outputs:
 ![PytorchRevelio](/readme-images/Figure_3_sm_guided.jpg)
 ![PytorchRevelio](/readme-images/Figure_5_sm_guided.jpg)
 
+
+
+* Saliency map of ResNet-50 with grad_cam:
+
+```python
+import matplotlib.pyplot as plt
+import torch
+import torchvision
+from torchvision import transforms
+from PIL import Image
+from PytorchRevelio import PytorchRevelio
+
+if __name__ == '__main__':
+
+    # load pretrained resnet50
+    vgg11_net = torchvision.models.resnet50(pretrained=True)
+
+    # choose GPU if it is available
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = 'cpu'
+
+    print('Device: {}'.format(device))
+
+    # put network on device
+    vgg11_net.to(device)
+
+    # print name of modules
+    for key, value in vgg11_net.named_modules():
+        print('+' * 10)
+        print(key)
+        print('-' * 10)
+        print(value)
+
+    # network transformer for input image
+    img_transformer = transforms.Compose([
+        # transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+
+    # for different convolutional filter and neuron in fully connected layer
+    # show representation
+    first_layer_name = 'conv1'
+    last_layer_name = 'fc'
+
+    for input_image_name, class_number in [("test_images/cheta-zebra-293-340.jpg", 293),
+                                           ("test_images/cheta-zebra-293-340.jpg", 340),
+                                           ("test_images/vulture-lion-23-291.jpg", 23),
+                                           ("test_images/vulture-lion-23-291.jpg", 291),
+                                           ("test_images/Gorilla-Lion-Tiger-366-291-292.jpg", 366),
+                                           ("test_images/Gorilla-Lion-Tiger-366-291-292.jpg", 291),
+                                           ("test_images/Gorilla-Lion-Tiger-366-291-292.jpg", 292),
+                                           ("test_images/bull_mastiff_tabbycat_243_281.png", 243),
+                                           ("test_images/bull_mastiff_tabbycat_243_281.png", 281),
+                                           ("test_images/hen_imagenet_8.jpg", 8),
+                                           ]:
+
+        # read input image
+        input_image = Image.open(input_image_name).convert('RGB')
+
+        input_image_size = input_image.size
+
+        guided_saliency, sum_last_conv_features_map, grad_cam_gradients = PytorchRevelio.grad_cam(
+                             network=vgg11_net,
+                             input_image=input_image,
+                             input_image_size=input_image_size,
+                             class_number=class_number,
+                             img_transformer=img_transformer,
+                             first_layer_name=first_layer_name,
+                             selected_conv_layer_name="layer4.2.conv3",
+                             device=device)
+
+        #
+        grad_cam_gradients = PytorchRevelio.tensor_outputs_to_image(grad_cam_gradients)
+
+        #
+        sum_last_conv_features_map = PytorchRevelio.tensor_outputs_to_image(sum_last_conv_features_map)
+
+        #
+        guided_saliency = PytorchRevelio.tensor_outputs_to_image(guided_saliency)
+
+        plt.figure()
+        ax = plt.subplot(2, 2, 1)
+        plt.imshow(input_image)
+        ax.set_title("Input Image")
+        ax = plt.subplot(2, 2, 2)
+        plt.imshow(guided_saliency)
+        ax.set_title("Guided Saliency")
+        ax = plt.subplot(2, 2, 3)
+        plt.imshow(sum_last_conv_features_map)
+        ax.set_title("Grad Cam")
+        ax = plt.subplot(2, 2, 4)
+        plt.imshow(grad_cam_gradients)
+        ax.set_title("Guided Grad Cam")
+
+    plt.show()
+```
+
+Some of the outputs:
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
+![PytorchRevelio](/readme-images/.jpg)
