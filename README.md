@@ -1,4 +1,4 @@
-# PytorchRevelio Introduction
+# Introduction of PytorchRevelio 
 
 PytorchRevelio is a collection of classes and functions that allow you to investigate MLP and convolutional networks written in Pytorch. These classes and functions enable you to visualize features that neurons and filters have learned or illustrate a saliency map for a given image. Even a Deep-Dream function is provided to have more fun. You can calculate feature visualization and saliency map with several different methods. Although Some of these methods are better than others, we included weaker methods for educational purposes.
 
@@ -26,3 +26,9 @@ activation_maximization_with_gaussian_blurring | [Visualizing GoogLeNet Classes]
 activation_maximization_with_bilateral_blurring | [Class visualization with bilateral filters](https://mtyka.github.io/deepdream/2016/02/05/bilateral-class-vis.html)
 saliency_map | [Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps](https://arxiv.org/abs/1312.6034)
 saliency_map_guided | [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)
+deep_dream | [Inceptionism: Going Deeper into Neural Networks](https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html)
+grad_cam | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
+
+
+
+
