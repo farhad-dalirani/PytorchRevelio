@@ -21,13 +21,13 @@ Visualizing learned feature maps and illustrating saliency maps are highly sensi
 
 Methods of PytorchRevelio | Reference (Paper, Webpage, etc)
 --------|--------
-activation_maximization | [Visualizing higher-layer features of a deep network](https://www.researchgate.net/publication/265022827_Visualizing_Higher-Layer_Features_of_a_Deep_Network)
-activation_maximization_with_gaussian_blurring | [Visualizing GoogLeNet Classes](https://www.auduno.com/2015/07/29/visualizing-googlenet-classes/)
-activation_maximization_with_bilateral_blurring | [Class visualization with bilateral filters](https://mtyka.github.io/deepdream/2016/02/05/bilateral-class-vis.html)
-saliency_map | [Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps](https://arxiv.org/abs/1312.6034)
-saliency_map_guided | [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)
-deep_dream | [Inceptionism: Going Deeper into Neural Networks](https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html)
-grad_cam | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
+activation_maximization(...) | [Visualizing higher-layer features of a deep network](https://www.researchgate.net/publication/265022827_Visualizing_Higher-Layer_Features_of_a_Deep_Network)
+activation_maximization_with_gaussian_blurring(...) | [Visualizing GoogLeNet Classes](https://www.auduno.com/2015/07/29/visualizing-googlenet-classes/)
+activation_maximization_with_bilateral_blurring(...) | [Class visualization with bilateral filters](https://mtyka.github.io/deepdream/2016/02/05/bilateral-class-vis.html)
+saliency_map(...) | [Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps](https://arxiv.org/abs/1312.6034)
+saliency_map_guided(...) | [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)
+deep_dream(...) | [Inceptionism: Going Deeper into Neural Networks](https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html)
+grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
 
 
 
