@@ -25,3 +25,4 @@ activation_maximization | [Visualizing higher-layer features of a deep network](
 activation_maximization_with_gaussian_blurring | [Visualizing GoogLeNet Classes](https://www.auduno.com/2015/07/29/visualizing-googlenet-classes/)
 activation_maximization_with_bilateral_blurring | [Class visualization with bilateral filters](https://mtyka.github.io/deepdream/2016/02/05/bilateral-class-vis.html)
 saliency_map | [Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps](https://arxiv.org/abs/1312.6034)
+saliency_map_guided | [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)
