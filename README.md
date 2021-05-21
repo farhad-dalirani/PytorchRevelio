@@ -139,5 +139,9 @@ if __name__ == '__main__':
     plt.show()
 ```
 
-Some of the outputs
+Some of the outputs:
+![PytorchRevelio](/readme-images/Figure_1_alexnet_AM.png)
+![PytorchRevelio](/readme-images/Figure_3_alexnet_AM.png)
+
+
 
