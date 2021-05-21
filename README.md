@@ -16,3 +16,9 @@ In the following, we introduce provided methods and show their use cases with di
 
 ## What should we pay attention to while using these methods?
 Visualizing learned feature maps and illustrating saliency maps are highly sensitive to hyper-parameters. Therefore, make sure to choose a good set of hyper-parameters to obtain good results. 
+
+## All methods of PytorchRevelio
+
+Methods | Source(Paper, Webpage, etc)
+--------|--------
+activation_maximization| [Visualizing higher-layer features of a deep network](https://www.researchgate.net/publication/265022827_Visualizing_Higher-Layer_Features_of_a_Deep_Network)
