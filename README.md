@@ -3,11 +3,10 @@
 
 
 ##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
+[Introduction of PytorchRevelio ](#Introduction of PytorchRevelio )  
+[Where can we use it?](#Where can we use it?)    
 <a name="headers"/>
-## Headers
+
 
 # Introduction of PytorchRevelio 
 
