@@ -1,8 +1,6 @@
 ![PytorchRevelio](/readme-images/PytorchRevelio.jpg)
 ![PytorchRevelio](/readme-images/Saliency-map.jpg)
 
-[Introduction of PytorchRevelio](#Introduction-of-PytorchRevelio)
-[Where can we use it?](#Where-can-we-use-it?)
 
 
 # Introduction of PytorchRevelio 
