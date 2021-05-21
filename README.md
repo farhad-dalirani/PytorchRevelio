@@ -642,3 +642,7 @@ Some of the outputs:
 ![PytorchRevelio](/readme-images/Figure_8_sm_ggc.jpg)
 ![PytorchRevelio](/readme-images/Figure_9_sm_ggc.jpg)
 ![PytorchRevelio](/readme-images/Figure_10_sm_ggc.jpg)
+
+
+## What about contribution?
+There are a lot of different methods for opening the black box of deep neural networks. Please add new methods to the repository or fix the existing mistakes. 
