@@ -644,5 +644,5 @@ Some of the outputs:
 ![PytorchRevelio](/readme-images/Figure_10_sm_ggc.jpg)
 
 
-## What about contribution?
+## What about contributing?
 There are a lot of different methods for opening the black box of deep neural networks. Please add new methods to the repository or fix the existing mistakes. 
