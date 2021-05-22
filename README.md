@@ -2,7 +2,7 @@
 ![PytorchRevelio](/readme-images/Saliency-map.jpg)
 
 [![License](https://img.shields.io/github/license/farhad-dalirani/PytorchRevelio)](https://github.com/farhad-dalirani/PytorchRevelio/blob/main/LICENSE)
-[![DOI](https://zenodo.org/badge/369538705.svg)](https://zenodo.org/badge/latestdoi/369538705)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4780801.svg)](https://doi.org/10.5281/zenodo.4780801)
 
 
 # Introduction of PytorchRevelio 
