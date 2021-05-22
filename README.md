@@ -49,6 +49,12 @@ grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-b
   1. saliency_map_guided
   1. saliency_map
 
+## Citation
+You can use the below text to cite PytorchRevelio.
+```
+Farhad Dalirani. (2021, May 22). farhad-dalirani/PytorchRevelio: PytorchRevelio-V1.0.0 (Version V1.0.0). Zenodo. http://doi.org/10.5281/zenodo.4780801
+```
+
 ## Examples of using PytorchRevelio
 
 * Visualizing features of Alexnet with activation_maximization:
