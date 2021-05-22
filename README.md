@@ -1,4 +1,5 @@
 ![PytorchRevelio](/readme-images/PytorchRevelio.jpg)
+![PytorchRevelio](/readme-images/Figure_6.jpg)
 ![PytorchRevelio](/readme-images/Saliency-map.jpg)
 
 [![License](https://img.shields.io/github/license/farhad-dalirani/PytorchRevelio)](https://github.com/farhad-dalirani/PytorchRevelio/blob/main/LICENSE)
