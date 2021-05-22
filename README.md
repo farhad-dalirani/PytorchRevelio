@@ -1,4 +1,4 @@
-![PytorchRevelio](/readme-images/PytorchRevelio.jpg)
+![PytorchRevelio](/readme-images/feature-class-representation.jpg)
 ![PytorchRevelio](/readme-images/Figure_6.jpg)
 ![PytorchRevelio](/readme-images/Saliency-map.jpg)
 
