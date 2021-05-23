@@ -39,6 +39,8 @@ saliency_map_guided(...) | [Striving for Simplicity: The All Convolutional Net](
 deep_dream(...) | [Inceptionism: Going Deeper into Neural Networks](https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html)
 grad_cam(...) | [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
 
+For detail about different methods you can see this blog post [Reveling what neural networks see and learn: PytorchRevelio](https://dalirani-1373.medium.com/reveling-what-neural-networks-see-and-learn-pytorchrevelio-a218ef5fc61f)
+
 ## Which method does perform better? 
 * The higher methods in the list perform better for feature visualization:
   1. activation_maximization_with_bilateral_blurring
