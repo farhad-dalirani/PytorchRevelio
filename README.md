@@ -54,7 +54,7 @@ For detail about different methods you can see this blog post [Reveling what neu
 ## Citation
 You can use the below text to cite PytorchRevelio.
 ```
-Farhad Dalirani. (2021, May 22). farhad-dalirani/PytorchRevelio: PytorchRevelio-V1.0.0 (Version V1.0.0). Zenodo. http://doi.org/10.5281/zenodo.4780801
+Farhad Dalirani. (2021, May 23). farhad-dalirani/PytorchRevelio: PytorchRevelio-V1.1.0 (Version V1.1.0). Zenodo. http://doi.org/10.5281/zenodo.4782563
 ```
 
 ## Examples of using PytorchRevelio
